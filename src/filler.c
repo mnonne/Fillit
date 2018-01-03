@@ -6,11 +6,15 @@
 /*   By: aminadzh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 15:54:09 by aminadzh          #+#    #+#             */
-/*   Updated: 2017/12/27 17:45:28 by aminadzh         ###   ########.fr       */
+/*   Updated: 2018/01/03 16:00:43 by aminadzh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+/*
+** Counts the needed size of a map
+*/
 
 int		count_map_size(t_list *lst)
 {
@@ -24,6 +28,10 @@ int		count_map_size(t_list *lst)
 	}
 	return (n);
 }
+
+/*
+** Backtracking recursive algorythm to fill the map
+*/
 
 int		fill_map(t_map *map, t_list *lst)
 {
@@ -79,6 +87,11 @@ int		fill_map(t_map *map, t_list *lst)
 	}
 	return (0);
 }*/
+
+/*
+** A function to solve the problem
+** Calls the main algorythm and increases the map size if needed
+*/
 
 t_map	*solve(t_list *lst)
 {

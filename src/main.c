@@ -6,7 +6,7 @@
 /*   By: aminadzh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:13:17 by aminadzh          #+#    #+#             */
-/*   Updated: 2017/12/21 17:54:28 by aminadzh         ###   ########.fr       */
+/*   Updated: 2018/01/03 16:01:27 by aminadzh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ int		main(int ac, char **av)
 	print_map(map);
 	return (0);
 }
+
+/*
+** A function to output result
+*/
 
 void	print_map(t_map *map)
 {

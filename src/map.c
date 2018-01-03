@@ -6,11 +6,15 @@
 /*   By: aminadzh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 17:06:52 by aminadzh          #+#    #+#             */
-/*   Updated: 2017/12/21 18:24:49 by aminadzh         ###   ########.fr       */
+/*   Updated: 2018/01/03 16:05:05 by aminadzh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+/*
+** Creates and returns the map
+*/
 
 t_map	*new_map(int size)
 {
@@ -31,6 +35,10 @@ t_map	*new_map(int size)
 	return (map);
 }
 
+/*
+** Deletes a map
+*/
+
 void	free_map(t_map *map)
 {
 	int		i;
@@ -44,6 +52,12 @@ void	free_map(t_map *map)
 	ft_memdel((void **)&map->arr);
 	ft_memdel((void **)&map);
 }
+
+/*
+** Pleaces a figure to pos (x, y) and returns 0 in case of success
+** If placement is not successfull, returns a number of pleaced points.
+** Result is used in deleting figure
+*/
 
 int		place_tet(t_map *map, t_p pos, t_list *lst)
 {
@@ -67,6 +81,10 @@ int		place_tet(t_map *map, t_p pos, t_list *lst)
 	}
 	return (0);
 }
+
+/*
+** Deletes a figure, if pleacement was not successfull
+*/
 
 void	del_tet(t_map *map, t_p pos, t_list *lst, int to_del)
 {

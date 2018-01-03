@@ -6,11 +6,15 @@
 /*   By: aminadzh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 16:25:40 by aminadzh          #+#    #+#             */
-/*   Updated: 2017/12/21 18:04:41 by aminadzh         ###   ########.fr       */
+/*   Updated: 2018/01/03 16:10:12 by aminadzh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fillit.h"
+
+/*
+** Creates an arraty of points t_p
+*/
 
 t_p		*create_matrix(char **tet)
 {
@@ -41,6 +45,10 @@ t_p		*create_matrix(char **tet)
 	return (matrix);
 }
 
+/*
+** Trims an array
+*/
+
 void	trim_matrix(t_p *mat)
 {
 	int		i;
@@ -67,6 +75,10 @@ void	trim_matrix(t_p *mat)
 	}
 }
 
+/*
+** Creates a linked list of figures
+*/
+
 t_list	*create_lst(char ***tet)
 {
 	t_list	*lst;
@@ -87,6 +99,10 @@ t_list	*create_lst(char ***tet)
 	}
 	return (lst);
 }
+
+/*
+** Creates a list element
+*/
 
 t_list	*lst_nu(char **tet, size_t content_size, char let)
 {

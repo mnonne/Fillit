@@ -6,11 +6,16 @@
 /*   By: aminadzh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:51:13 by aminadzh          #+#    #+#             */
-/*   Updated: 2017/12/27 17:25:10 by aminadzh         ###   ########.fr       */
+/*   Updated: 2018/01/03 16:14:22 by aminadzh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+/*
+** Creates an array that is a figure
+** Used in validation of file
+*/
 
 char	**tet_new(char *s)
 {
@@ -26,6 +31,10 @@ char	**tet_new(char *s)
 		return (NULL);
 	return (t_new);
 }
+
+/*
+** Checks if we have only '.' and '#' and their right position
+*/
 
 int		valid_sym_count(char **tet)
 {
@@ -48,6 +57,10 @@ int		valid_sym_count(char **tet)
 	}
 	return (count == 4) ? (1) : (0);
 }
+
+/*
+** Checks if a figure is actually tetrimino
+*/
 
 int		valid_tet(char **tet)
 {
@@ -72,6 +85,10 @@ int		valid_tet(char **tet)
 	}
 	return (p == 4 || p == 3) ? (1) : (0);
 }
+
+/*
+** Check for maximum 26 tetrimino, length of lines and empty lines btw figures
+*/
 
 int		valid_sym(char *s)
 {
@@ -102,6 +119,10 @@ int		valid_sym(char *s)
 		return (0);
 	return (1);
 }
+
+/*
+** Checks the last empty line
+*/
 
 int		last_n(char *s)
 {

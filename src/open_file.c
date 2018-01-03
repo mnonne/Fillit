@@ -6,11 +6,15 @@
 /*   By: aminadzh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 13:25:53 by aminadzh          #+#    #+#             */
-/*   Updated: 2017/12/21 17:59:27 by aminadzh         ###   ########.fr       */
+/*   Updated: 2018/01/03 16:08:04 by aminadzh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+/*
+** Opens a file for reading. If file is valid returns array
+*/
 
 char	***file_open(char *filename)
 {
@@ -29,6 +33,10 @@ char	***file_open(char *filename)
 		return (NULL);
 	return (val_file(buf));
 }
+
+/*
+** A main function in validating the file. If valid return an array
+*/
 
 char	***val_file(char *s)
 {
@@ -55,6 +63,10 @@ char	***val_file(char *s)
 	return (tab);
 }
 
+/*
+** Counts the amount of figures in file
+*/
+
 int		count_tets(char *s)
 {
 	int		i;
@@ -69,6 +81,10 @@ int		count_tets(char *s)
 	}
 	return (i);
 }
+
+/*
+** Creates and returns a tetrimino structure
+*/
 
 t_tet	*create_tetrimino(char **tet, char let)
 {
