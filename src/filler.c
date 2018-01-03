@@ -6,7 +6,7 @@
 /*   By: aminadzh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/18 15:54:09 by aminadzh          #+#    #+#             */
-/*   Updated: 2018/01/03 16:00:43 by aminadzh         ###   ########.fr       */
+/*   Updated: 2018/01/03 20:01:24 by aminadzh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 int		count_map_size(t_list *lst)
 {
 	int		n;
+	int		size;
 
 	n = 0;
 	while (lst)
@@ -26,7 +27,34 @@ int		count_map_size(t_list *lst)
 		n++;
 		lst = lst->next;
 	}
-	return (n);
+	size = sqroot(n);
+	return (size);
+}
+
+/*
+** Finds the closest square root to calc the min map size
+*/
+
+int		sqroot(int n)
+{
+	int		sqrt;
+	int		i;
+	int		nb;
+
+	sqrt = 0;
+	i = 1;
+	nb = n;
+	while (nb > 0)
+	{
+		nb = nb - i;
+		i += 2;
+		if (nb >= 0)
+			sqrt += 1;
+	}
+	if (nb >= 0)
+		return (sqrt);
+	else
+		return (sqroot(n + 1));
 }
 
 /*
@@ -60,33 +88,6 @@ int		fill_map(t_map *map, t_list *lst)
 	}
 	return (0);
 }
-
-/*int		fill_map(t_map *map, t_list *lst)
-{
-	t_p		pos;
-//	int		to_del;
-
-	if (!lst)
-		return (1);
-	pos.y = 0;
-	while (pos.y < map->m_size)
-	{
-		pos.x = 0;
-		while (pos.x < map->m_size)
-		{
-			if (fill_map(map, lst->next))
-			{
-				place_tet(map, pos, lst->next);
-				return (1);
-			}
-			else
-				del_tet(map, pos, lst, 4);
-			pos.x++;
-		}
-		pos.y++;
-	}
-	return (0);
-}*/
 
 /*
 ** A function to solve the problem

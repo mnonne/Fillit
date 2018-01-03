@@ -6,7 +6,7 @@
 /*   By: aminadzh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/16 16:25:40 by aminadzh          #+#    #+#             */
-/*   Updated: 2018/01/03 16:10:12 by aminadzh         ###   ########.fr       */
+/*   Updated: 2018/01/03 19:35:16 by aminadzh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ t_p		*create_matrix(char **tet)
 }
 
 /*
-** Trims an array
+** Trims an array. Here was a mistake
 */
 
 void	trim_matrix(t_p *mat)
@@ -56,8 +56,8 @@ void	trim_matrix(t_p *mat)
 	int		miny;
 
 	i = 0;
-	minx = 3;
-	miny = 3;
+	minx = 4;
+	miny = 4;
 	while (i < 4)
 	{
 		if (mat[i].x <= minx)
